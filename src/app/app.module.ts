@@ -11,6 +11,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {MainLayoutComponent} from './layouts/main-layout/main-layout.component';
 import {UserDetailPageComponent} from './pages/user-detail-page/user-detail-page.component';
 import {UsersPageComponent} from './pages/users-page/users-page.component';
+import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
             path: ':id', component: UserDetailPageComponent
           }
         ]
+      },
+      {
+        path: 'posts', component: PostsPageComponent
       }
     ]
   }
@@ -38,7 +42,8 @@ const routes: Routes = [
     HeaderComponent,
     MainLayoutComponent,
     UserDetailPageComponent,
-    UsersPageComponent
+    UsersPageComponent,
+    PostsPageComponent
   ],
   imports: [
     BrowserModule,
