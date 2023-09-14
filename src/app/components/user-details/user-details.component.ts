@@ -11,11 +11,11 @@ import {UserService} from "../services";
 export class UserDetailsComponent {
   user: IUser
 
-  constructor(private router: Router, private activatedRoute:ActivatedRoute, private userService:UserService) {
-    this.activatedRoute.params.subscribe(({id})=>{
-    const state = this.router.getCurrentNavigation()?.extras.state as IUser;
-      if (state){
-      this.user = state;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) {
+    this.activatedRoute.params.subscribe(({id}) => {
+      const state = this.router.getCurrentNavigation()?.extras.state as IUser;
+      if (state) {
+        this.user = state;
       } else {
         this.userService.getById(id).subscribe(value => this.user = value)
       }

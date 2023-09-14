@@ -12,6 +12,9 @@ import {MainLayoutComponent} from './layouts/main-layout/main-layout.component';
 import {UserDetailPageComponent} from './pages/user-detail-page/user-detail-page.component';
 import {UsersPageComponent} from './pages/users-page/users-page.component';
 import { PostsPageComponent } from './pages/posts-page/posts-page.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/post/post.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 const routes: Routes = [
   {
@@ -27,7 +30,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'posts', component: PostsPageComponent
+        path: 'posts', component: PostsPageComponent, children:[
+          {
+            path: ':id', component: PostDetailsComponent
+          }
+        ]
       }
     ]
   }
@@ -43,7 +50,10 @@ const routes: Routes = [
     MainLayoutComponent,
     UserDetailPageComponent,
     UsersPageComponent,
-    PostsPageComponent
+    PostsPageComponent,
+    PostsComponent,
+    PostComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,
