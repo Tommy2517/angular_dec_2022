@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input,} from '@angular/core';
 import {IUser} from "../interfaces";
 import {ActivatedRoute, Router} from "@angular/router";
 
